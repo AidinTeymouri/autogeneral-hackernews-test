@@ -1,0 +1,23 @@
+<div >
+
+  <div fxLayout="column" fxLayoutAlign="center center" >
+      <input type="text" class="form-control" placeholder="Search" autofocus
+      [(ngModel)]="searchQuery" (keyup.enter)="OnSearch()">
+  </div>
+  <ol>
+    <li *ngFor="let item of items?.hits; let i = index" class="post">
+      {{item.title}}
+    </li>
+  </ol>
+  <div class="nav">
+    <a href="" class="prev">
+      ‹ Prev
+    </a>
+    <button class="more" (click)="nextPage()">
+      More ›
+    </button>
+  </div>
+  <hr>
+  {{items?.page}} of {{items?.nbPages}}
+  <hr>
+</div>
