@@ -3,8 +3,11 @@
     <div fxLayout="column" fxLayoutAlign="center center">
       <div class="searchBox">
         <mat-icon>search</mat-icon>
-        <input type="search" class="form-control" placeholder="Search..." autofocus [(ngModel)]="searchQuery"
+        <input type="input" class="form-control" placeholder="press enter..." autofocus [(ngModel)]="searchQuery"
           (keyup.enter)="OnSearch()">
+          <button mat-icon-button color="primary" (click)="OnClear()">
+              <mat-icon>close</mat-icon>
+            </button>
       </div>
     </div>
     <mat-divider></mat-divider>
@@ -24,7 +27,7 @@
         <mat-icon>arrow_back</mat-icon>
       </button>
       <div fxLayout="column">
-        <strong>{{items?.page}} of {{items?.nbPages}}</strong>
+        <strong>Page {{items?.page + 1}}  of  {{items?.nbPages + 1}}</strong>
       </div>
 
       <button mat-icon-button color="primary" (click)="nextPage()" fxLayout="column">

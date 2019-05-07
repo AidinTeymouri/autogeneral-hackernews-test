@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AngularMaterialModule } from './angular.material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,8 @@ import { HackerNewsListService } from './hacker-news/hacker-news-list/hacker-new
     HttpClientModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgbModule
   ],
   providers: [HackerNewsService, HackerNewsListService],
   bootstrap: [AppComponent]

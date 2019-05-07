@@ -48,5 +48,11 @@ export class HackerNewsListComponent implements OnInit {
     this.getStories(page, this.searchQuery);
   }
 
+  OnClear() {
+    this.searchQuery = '';
+    const page = 0;
+    this.getStories(page);
+  }
+
 
 }
