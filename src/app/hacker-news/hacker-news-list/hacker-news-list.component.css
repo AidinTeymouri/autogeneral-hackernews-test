@@ -1,3 +1,32 @@
 .searchInput {
-    width: 40%;
+    width: 50%;
+}
+
+.searchBox {
+  padding: 20px 0px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-field {
+  min-width: 100px;
+  flex: 1 auto;
+}
+
+.form-control {
+  font-size: 20px;
+  line-height: 34px;
+}
+
+::ng-deep.mat-pseudo-checkbox{
+  display: none !important;
+}
+
+.page-number {
+  margin: 1% 10% 1%;
+}
+
+.search-list {
+  margin: 1% 1% 1%;
 }

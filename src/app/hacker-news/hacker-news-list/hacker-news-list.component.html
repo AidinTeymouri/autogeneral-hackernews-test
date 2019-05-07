@@ -1,23 +1,36 @@
-<div >
+<div>
+  <mat-card class="search-list">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <div class="searchBox">
+        <mat-icon>search</mat-icon>
+        <input type="search" class="form-control" placeholder="Search..." autofocus [(ngModel)]="searchQuery"
+          (keyup.enter)="OnSearch()">
+      </div>
+    </div>
+    <mat-divider></mat-divider>
 
-  <div fxLayout="column" fxLayoutAlign="center center" >
-      <input type="text" class="form-control" placeholder="Search" autofocus
-      [(ngModel)]="searchQuery" (keyup.enter)="OnSearch()">
-  </div>
-  <ol>
-    <li *ngFor="let item of items?.hits; let i = index" class="post">
-      {{item.title}}
-    </li>
-  </ol>
-  <div class="nav">
-    <a href="" class="prev">
-      ‹ Prev
-    </a>
-    <button class="more" (click)="nextPage()">
-      More ›
-    </button>
-  </div>
-  <hr>
-  {{items?.page}} of {{items?.nbPages}}
-  <hr>
+    <mat-selection-list >
+      <mat-list-option *ngFor="let item of items?.hits; let i = index">
+        <a mat-list-item fxLayout="column">
+          <h5>{{ item.title }}</h5>
+        </a>
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card>
+
+  <mat-card class="page-number" color="secondary">
+    <div fxLayout="row" fxLayoutAlign="space-between">
+      <button mat-icon-button color="primary" fxLayout="column" (click)="previousPage()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <div fxLayout="column">
+        <strong>{{items?.page}} of {{items?.nbPages}}</strong>
+      </div>
+
+      <button mat-icon-button color="primary" (click)="nextPage()" fxLayout="column">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+
 </div>

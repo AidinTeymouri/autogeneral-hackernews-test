@@ -14,6 +14,7 @@ import { HackerNewsListComponent } from './hacker-news/hacker-news-list/hacker-n
 import { HackerNewsService } from './hacker-news/shared/hacker-news.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HackerNewsListService } from './hacker-news/hacker-news-list/hacker-news-list.service';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { FooterComponent } from './footer/footer.component';
     AngularMaterialModule,
     FlexLayoutModule
   ],
-  providers: [HackerNewsService],
+  providers: [HackerNewsService, HackerNewsListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

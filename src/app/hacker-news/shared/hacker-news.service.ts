@@ -12,7 +12,7 @@ export class HackerNewsService {
 
    getNews(page?: number, query?: string) {
     let params = new HttpParams()
-    params = params.append('hitsPerPage', '5');
+    params = params.append('hitsPerPage', '10');
     params = params.append('page', page.toString());
     params = params.append('query', query);
     return this.http.get(`${this.baseUrl}`, { params: params });
